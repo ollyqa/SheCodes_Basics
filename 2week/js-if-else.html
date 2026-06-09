@@ -73,13 +73,17 @@
       <button>Apply Now</button>
     </section>
     <script>
-      let homeTown = prompt("What is your hometown?");
-      alert("Your hometown is " + homeTown);
+      let currentHour = prompt("What is the current hour?");
 
-      let firstName = prompt("What is your first name?");
-      let lastName = prompt("What is your last name?");
-      let fullName = firstName + " " + lastName;
-      alert("Hello, " + fullName + " from " + homeTown + "!");
+      if (currentHour < 12) {
+        alert("Good morning! 🌄");
+      } else {
+        if (currentHour < 18) {
+          alert("Good afternoon! 🌤️");
+        } else {
+          alert("Good evening! 🌆");
+        }
+      }
     </script>
   </body>
 </html>
