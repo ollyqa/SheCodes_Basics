@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+      h1 {
+        color: #1a64d6;
+        text-align: center;
+        font-size: 34px;
+        line-height: 48px;
+        font-family: "Helvetica", sans-serif;
+      }
+      h2 {
+        text-align: center;
+        font-family: "Helvetica", sans-serif;
+        font-size: 34px;
+        line-height: 48px;
+        font-weight: 300;
+        margin: 0;
+      }
+      h3 {
+        display: block;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: "Helvetica", sans-serif;
+      }
+      p {
+        text-align: center;
+        font-size: 18px;
+        font-family: monospace;
+        opacity: 0.7;
+      }
+      ul {
+        padding: 0;
+      }
+      li {
+        list-style: none;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 10px;
+        transition: all 200ms ease-in-out;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      li:hover {
+        background: #d1e3ff;
+      }
+      button {
+        display: block;
+        margin: 20px auto;
+        padding: 16px 24px;
+        font-size: 16px;
+        background: #1a64d6;
+        color: white;
+        border: 1px solid #1a64d6;
+        border-radius: 30px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        transition: all 200ms ease-in-out;
+        font-family: "Helvetica", sans-serif;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: white;
+        color: #1a64d6;
+        border: 1px solid #1a64d6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="weather-block">
+      <h1>
+        🌥️
+        <br />
+        Currently 23° in Dnipro
+      </h1>
+    </div>
+    <h2>15° / <strong>23°</strong></h2>
+
+    <ul>
+      <li class="day-weather">
+        <h3>🌧️Tomorrow</h3>
+        <p>17° / <strong>25°</strong></p>
+      </li>
+      <li class="day-weather">
+        <h3>🌤️Saturday</h3>
+        <p>17° / <strong>28°</strong></p>
+      </li>
+      <li class="day-weather">
+        <h3>⛈️Sunday</h3>
+        <p>18° / <strong>27°</strong></p>
+      </li>
+    </ul>
+    <button>Change city</button>
+    <div class="coded-by">
+      <p>Coded by Olha Morhun</p>
+    </div>
+    <script>
+      function changeCity() {
+        let city = prompt("What city do you live in?");
+        let temperature = prompt("What temperature is it?");
+        let heading = document.querySelector("h1");
+        if (temperature < 0) {
+          heading.innerHTML =
+            "☹️<br />Currently " + temperature + "°C in " + city;
+        } else {
+          heading.innerHTML =
+            "😄<br />Currently " + temperature + "°C in " + city;
+        }
+      }
+      let changeButton = document.querySelector("button");
+      changeButton.addEventListener("click", changeCity);
+    </script>
+  </body>
+</html>
